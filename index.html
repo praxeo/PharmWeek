@@ -91,6 +91,30 @@
             height: 55px;
         }
 
+        .uab-medicine-logo {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            color: var(--uab-green);
+        }
+
+        .uab-medicine-logo .uab {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--uab-green);
+        }
+
+        .uab-medicine-logo .medicine {
+            font-size: 20px;
+            margin-left: 5px;
+            color: var(--uab-green);
+        }
+
         .site-nav {
             background-color: var(--white);
             padding: 10px 0;
@@ -385,7 +409,10 @@
 <body>
     <header class="site-header">
         <div class="container">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/UAB_logo.svg/256px-UAB_logo.svg.png" alt="UAB Logo" class="header-logo" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/UAB_logo.svg/256px-UAB_logo.svg.png';">
+            <div class="uab-medicine-logo">
+                <span class="uab">UAB</span>
+                <span class="medicine">MEDICINE</span>
+            </div>
             <h1 class="page-headline">Pharmacy Week 2024</h1>
         </div>
     </header>
