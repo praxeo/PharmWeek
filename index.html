@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Week 2024 - UAB</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* UAB Medicine Training Site Stylesheet - V2 (Polished) */
+        :root {
+            --uab-green: #1a5632;
+            --campus-green: #90d408;
+            --healing-teal: #007580;
+            --bham-sky-blue: #42caf0;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --text-color: #212529;
+            --border-radius: 8px;
+            --transition-speed: 0.3s;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: Arial, sans-serif;
+            font-weight: normal;
+            color: var(--uab-green);
+        }
+        a {
+            color: var(--healing-teal);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+        a:hover {
+            color: var(--bham-sky-blue);
+        }
+        .page-header {
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+        .page-headline {
+            font-weight: lighter;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .page-subhead {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-top: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        .site-header {
+            background-color: var(--uab-green);
+            padding: 1rem 0;
+            border-bottom: 5px solid var(--campus-green);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .site-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-logo {
+            height: 55px;
+        }
+        .site-nav {
+            background-color: var(--white);
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .site-nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .site-nav a {
+            color: #333;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: var(--border-radius);
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+        .site-nav a:hover {
+            background-color: var(--uab-green);
+            color: var(--white);
+            text-decoration: none;
+        }
+        main {
+            padding: 2rem 0;
+        }
+        .card {
+            background-color: var(--white);
+            padding: 1.5rem 2rem;
+            border-radius: var(--border-radius);
+            margin-top: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: var(--light-gray);
+            color: var(--uab-green);
+        }
+
+        /* Custom styles for Pharmacy Week */
+        .hero {
+            background: linear-gradient(rgba(26, 86, 50, 0.9), rgba(0, 117, 128, 0.8)), url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+        }
+        
+        .highlight {
+            color: var(--campus-green);
+            font-weight: bold;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--campus-green);
+            color: var(--uab-green);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all var(--transition-speed) ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:hover {
+            background-color: #7bc306;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+        
+        .event-card {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .event-image {
+            flex: 1;
+            min-width: 300px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--border-radius);
+        }
+        
+        .event-content {
+            flex: 2;
+        }
+        
+        .event-date {
+            display: inline-block;
+            background-color: var(--healing-teal);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .countdown-container {
+            text-align: center;
+            padding: 3rem 2rem;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .time-unit {
+            background-color: var(--healing-teal);
+            color: white;
+            padding: 1.5rem 1rem;
+            border-radius: var(--border-radius);
+            min-width: 100px;
+        }
+        
+        .time-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .time-label {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        
+        .speaker-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 2rem;
+        }
+        
+        .speaker-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .speaker-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .speaker-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 4px solid var(--campus-green);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 2rem;
+        }
+        
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--uab-green);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--campus-green);
+            transform: translateY(-5px);
+        }
+        
+        @media (max-width: 768px) {
+            .event-card {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .time-unit {
+                min-width: 80px;
+                padding: 1rem 0.5rem;
+            }
+            
+            .time-value {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/UAB_logo.svg/256px-UAB_logo.svg.png" alt="UAB Logo" class="header-logo">
+            <h1 class="page-headline">Pharmacy Week 2024</h1>
+        </div>
+    </header>
+
+    <nav class="site-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Celebrating Excellence in Pharmacy Care</h1>
+            <p>A week-long celebration of the vital role pharmacists play in patient care and health outcomes.</p>
+            <a href="#register" class="btn">Register Now</a>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <section class="card">
+                <h2 class="page-header">About Pharmacy Week</h2>
+                <p>Pharmacy Week at UAB celebrates the critical contributions of pharmacists to healthcare. This year's theme, "Advancing Patient Care Through Innovation," highlights how pharmacists are transforming patient outcomes through cutting-edge research and clinical practices.</p>
+                <p>The event brings together students, faculty, professionals, and community members to share knowledge, network, and celebrate excellence in pharmacy practice.</p>
+            </section>
+
+            <section id="events" class="card">
+                <h2 class="page-header">Special Events</h2>
+                
+                <div class="event-card">
+                    <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="event-content">
+                        <span class="event-date">June 12, 2024</span>
+                        <h3>Pharmacy Care Conference</h3>
+                        <p>Join leading pharmacists and healthcare professionals for discussions on innovative patient care approaches. This year's conference features presentations on personalized medicine, drug safety, and community health initiatives.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1586773860418-d37222d9dc8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="event-content">
+                        <span class="event-date">June 15, 2024</span>
+                        <h3>Medication Safety Workshop</h3>
+                        <p>Hands-on training on safe medication practices and preventing drug interactions. This interactive workshop will provide practical skills for both students and professionals.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1586740329002-5c3f2b791d8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="event-content">
+                        <span class="event-date">June 17, 2024</span>
+                        <h3>Community Health Fair</h3>
+                        <p>Free health screenings and medication consultations open to the public. Local pharmacists will provide health education and wellness resources.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="speakers" class="card">
+                <h2 class="page-header">Featured Speakers & Experts</h2>
+                
+                <div class="speaker-grid">
+                    <div class="speaker-card">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dr. Sarah Johnson" class="speaker-img">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p>Clinical Pharmacy Specialist</p>
+                        <p>University of Alabama at Birmingham</p>
+                    </div>
+                    
+                    <div class="speaker-card">
+                        <img src="https://images.unsplash.com/photo-1594824476127-847b2f0e0d3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dr. Michael Chen" class="speaker-img">
+                        <h3>Dr. Michael Chen</h3>
+                        <p>Pharmaceutical Research Director</p>
+                        <p>BioMed Innovations Inc.</p>
+                    </div>
+                    
+                    <div class="speaker-card">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dr. Amanda Williams" class="speaker-img">
+                        <h3>Dr. Amanda Williams</h3>
+                        <p>Pharmacy Practice Consultant</p>
+                        <p>Healthcare Excellence Group</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="countdown" class="countdown-container">
+                <h2 class="page-header">Countdown to Pharmacy Week 2024</h2>
+                <p>Join us for a week of education, networking, and celebration!</p>
+                
+                <div class="countdown-timer">
+                    <div class="time-unit">
+                        <div class="time-value" id="days">15</div>
+                        <div class="time-label">Days</div>
+                    </div>
+                    <div class="time-unit">
+                        <div class="time-value" id="hours">08</div>
+                        <div class="time-label">Hours</div>
+                    </div>
+                    <div class="time-unit">
+                        <div class="time-value" id="minutes">32</div>
+                        <div class="time-label">Minutes</div>
+                    </div>
+                    <div class="time-unit">
+                        <div class="time-value" id="seconds">45</div>
+                        <div class="time-label">Seconds</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="register" class="card">
+                <h2 class="page-header">Register for Pharmacy Week 2024</h2>
+                
+                <form id="registration-form">
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Full Name</label>
+                        <input type="text" id="name" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: var(--border-radius);">
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Email Address</label>
+                        <input type="email" id="email" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: var(--border-radius);">
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Phone Number</label>
+                        <input type="tel" id="phone" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: var(--border-radius);">
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="type" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Registration Type</label>
+                        <select id="type" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: var(--border-radius);">
+                            <option value="">Select Registration Type</option>
+                            <option value="student">Student (UAB Pharmacy Students)</option>
+                            <option value="professional">Pharmacy Professional</option>
+                            <option value="public">Public Attendee</option>
+                            <option value="speaker">Speaker/Presenter</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn">Register Now</button>
+                </form>
+            </section>
+
+            <section id="contact" class="card">
+                <h2 class="page-header">Contact Us</h2>
+                <p>For questions about Pharmacy Week 2024, please contact:</p>
+                
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                    <tr>
+                        <td>Jennifer Martinez</td>
+                        <td>j.martinez@uab.edu</td>
+                        <td>(205) 934-1234</td>
+                    </tr>
+                    <tr>
+                        <td>Robert Thompson</td>
+                        <td>r.thompson@uab.edu</td>
+                        <td>(205) 934-5678</td>
+                    </tr>
+                </table>
+                
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-header">
+        <div class="container">
+            <p>&copy; 2024 UAB Pharmacy Week. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown timer
+        function updateCountdown() {
+            const now = new Date();
+            const eventDate = new Date('June 12, 2024');
+            const diff = eventDate - now;
+            
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+        }
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+        
+        // Form submission handling
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for registering! You will receive a confirmation email shortly.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
